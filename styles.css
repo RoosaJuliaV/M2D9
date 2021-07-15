@@ -1,5 +1,5 @@
 h2 {
-    padding-top: 40px;
+    padding-top: 60px;
     color: white;
 }
 
@@ -21,6 +21,10 @@ background: linear-gradient(90deg, rgba(1,1,1,0.9486169467787114) 0%, rgba(44,43
 
 h3 {
     background-color: white;
+    margin-top: 60px;
+    margin-left: 230px;
+    border: 2px black;
+    padding: 10px 10px 10px 10px;
 }
 
 .card-title {
@@ -83,12 +87,38 @@ li {
 .jumbotron {
     animation: fadein 2s;
     padding: 40px 40px 40px 40px;
-    margin: 40px 40px;
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+
+.container {
+    margin-right: 42px;
+    
+}
+
+
+table {
+    margin-left: 230px;
+}
+
+
+#addButton:hover {
+    box-shadow: 12px 12px 7px black;
+    }
+
+#addButton:active {
+  background-color: black;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+  color: white;
+  box-shadow: 10px 5px 5px black;
 }
 
 
 
-.albums {
-    justify-content: center;
-}
+
+
+
+
+
 

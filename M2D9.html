@@ -89,13 +89,13 @@ HINT: Manage your time in order to finish the structure and responsiveness befor
         Make it appear with a fade-in animation effect when the page loads.
     -->
 
-    <div class="container mb-5 text-center">
-<div id="background" class="row">
-<div class="jumbotron">
-<h2>My Favourite Albums</h2>
-<p>Here you can see a list of all my favourite albums.</p>
-</div>
-</div>
+ <div class="container-flex text-center">
+     <div id="background" class="row">
+       <div class="jumbotron">
+        <h2>My Favourite Albums</h2>
+          <p>Here you can see a list of all my favourite albums.</p>
+        </div>
+       </div>
 
 
     
@@ -105,8 +105,12 @@ HINT: Manage your time in order to finish the structure and responsiveness befor
         Use the elements of a card to display nicely the album informations such as album title, artist, year, etc..
     -->
 
+      <!-- EXERCISE 3
+        Foreach album in the favorite list, place a badge on top of it with the genre of the album
+    -->
+
     <section id="albums">
-            <div class="container text-center col-12">
+            <div class="container align-center col-12">
                 <div class="row">
                  <div class="card m-2" style="width: 19rem;">
                    <span class="badge rounded-pill bg-light">Rap</span>
@@ -242,9 +246,6 @@ HINT: Manage your time in order to finish the structure and responsiveness befor
             </section>
       
            
-    <!-- EXERCISE 3
-        Foreach album in the favorite list, place a badge on top of it with the genre of the album
-    -->
 
     <!-- EXERCISE 4
         Create a section with an album tracklist inside a Bootstrap table.
@@ -254,89 +255,7 @@ HINT: Manage your time in order to finish the structure and responsiveness befor
         (If you want, you can also add extra columns)
     -->
 
-     <div class="container text-center col-8">
-        <table class="table mb-5">
-        <h3 class="mb-3">Tracklist</h3>
-        <thead>
-            <tr class="table-primary">
-            <th scope="col">Number</th>
-            <th scope="col">Title</th>
-            <th scope="col">Duration</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="table-success" id="row1">
-            <th scope="row">1</th>
-            <td>Dark Fantasy</td>
-            <td>4:49</td>
-            </tr>
-            <tr class="table-light" id="row2">
-            <th scope="row">2</th>
-            <td>Gorgeous (featuring Kid Cudi and Raekwon)</td>
-            <td>3:31</td>
-            </tr>
-            <tr class="table-secondary" id="row3">
-            <th scope="row">3</th>
-            <td>Power</td>
-            <td>4:47</td>
-            </tr>
-            <tr class="table-danger" id="row4">
-            <th scope="row">4</th>
-            <td>All of the Lights (Interlude)</td>
-            <td>2:01</td>
-            </tr>
-            <tr class="table-dark" id="row5">
-            <th scope="row">5</th>
-            <td>All of the Lights</td>
-            <td>4:04</td>
-            </tr>
-            <tr class="table-info" id="row6">
-            <th scope="row">6</th>
-            <td>Monster (featuring Jay-Z, Rick Ross, Nicki Minaj and Bon Iver)</td>
-            <td>3:44</td>
-            </tr>
-            <tr class="table-dark" id="row7">
-            <th scope="row">7</th>
-            <td>So Appalled (featuring Swizz Beatz, Jay-Z, Pusha T, Cyhi the Prynce and RZA)</td>
-            <td>3:52</td>
-            </tr>
-            <tr class="table-primary" id="row8">
-            <th scope="row">8</th>
-            <td>Devil in a New Dress (featuring Rick Ross)</td>
-            <td>4:48</td>
-            </tr>
-            <tr class="table-success" id="row9">
-            <th scope="row">9</th>
-            <td>Runaway (featuring Pusha T)</td>
-            <td>4:38</td>
-            </tr>
-            <tr class="table-secondary" id="row10">
-            <th scope="row">10</th>
-            <td>Hell of a Life</td>
-            <td>5:13</td>
-            </tr>
-            <tr class="table-light" id="row11">
-            <th scope="row">11</th>
-            <td>Blame Game (featuring John Legend)</td>
-            <td>4:18</td>
-            </tr>
-            <tr class="table-primary" id="row12">
-            <th scope="row">12</th>
-            <td>Lost in the World (featuring Bon Iver)</td>
-            <td>4:11</td>
-            </tr>
-            <tr class="table-dark" id="row13">
-            <th scope="row">13</th>
-            <td>Who Will Survive in America</td>
-            <td>3:45</td>
-            </tr>
-        </tbody>
-        </table>
-    </div>
-  
-
-
-    <!-- EXERCISE 5
+     <!-- EXERCISE 5
         Add a DELETE bootstrap button at the end of each row of the tracklist. 
         Attach the functionality to remove its row when it gets clicked.  
 
@@ -345,11 +264,108 @@ HINT: Manage your time in order to finish the structure and responsiveness befor
         Animate it with a fade-in effect upon the user hovering and fade-out when he/she goes away from it.
     -->
 
+    
+     <div class="container-flex text-center col-8">
+        <table id="table" class="table mb-5">
+        <h3 class="col-12">Tracklist</h3>
+        <thead>
+            <tr class="table-primary">
+            <th scope="col">Number</th>
+            <th scope="col">Title</th>
+            <th scope="col">Duration</th>
+            <th scope="col">Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="table-success" id="row1">
+            <th scope="row">1</th>
+            <td>Dark Fantasy</td>
+            <td>4:49</td>
+            <td><button type="button" class="btn btn-outline-dark" onclick="deleteRow('row1')">Delete</button></td>
+            </tr>
+            <tr class="table-light" id="row2">
+            <th scope="row">2</th>
+            <td>Gorgeous (featuring Kid Cudi and Raekwon)</td>
+            <td>3:31</td>
+            <td><button type="button" class="btn btn-outline-dark" onclick="deleteRow('row2')">Delete</button></td>
+            </tr>
+            <tr class="table-secondary" id="row3">
+            <th scope="row">3</th>
+            <td>Power</td>
+            <td>4:47</td>
+            <td><button type="button" class="btn btn-outline-dark" onclick="deleteRow('row3')">Delete</button></td>
+            </tr>
+            <tr class="table-danger" id="row4">
+            <th scope="row">4</th>
+            <td>All of the Lights (Interlude)</td>
+            <td>2:01</td>
+            <td><button type="button" class="btn btn-outline-dark" onclick="deleteRow('row4')">Delete</button></td>
+            </tr>
+            <tr class="table-success" id="row5">
+            <th scope="row">5</th>
+            <td>All of the Lights</td>
+            <td>4:04</td>
+            <td><button type="button" class="btn btn-outline-dark" onclick="deleteRow('row5')">Delete</button></td>
+            </tr>
+            <tr class="table-info" id="row6">
+            <th scope="row">6</th>
+            <td>Monster (featuring Jay-Z, Rick Ross, Nicki Minaj and Bon Iver)</td>
+            <td>3:44</td>
+            <td><button type="button" class="btn btn-outline-dark" onclick="deleteRow('row6')">Delete</button></td>
+            </tr>
+            <tr class="table-light" id="row7">
+            <th scope="row">7</th>
+            <td>So Appalled (featuring Swizz Beatz, Jay-Z, Pusha T, Cyhi the Prynce and RZA)</td>
+            <td>3:52</td>
+            <td><button type="button" class="btn btn-outline-dark" onclick="deleteRow('row7')">Delete</button></td>
+            </tr>
+            <tr class="table-primary" id="row8">
+            <th scope="row">8</th>
+            <td>Devil in a New Dress (featuring Rick Ross)</td>
+            <td>4:48</td>
+            <td><button type="button" class="btn btn-outline-dark" onclick="deleteRow('row8')">Delete</button></td>
+            </tr>
+            <tr class="table-success" id="row9">
+            <th scope="row">9</th>
+            <td>Runaway (featuring Pusha T)</td>
+            <td>4:38</td>
+            <td><button type="button" class="btn btn-outline-dark" onclick="deleteRow('row9')">Delete</button></td>
+            </tr>
+            <tr class="table-secondary" id="row10">
+            <th scope="row">10</th>
+            <td>Hell of a Life</td>
+            <td>5:13</td>
+            <td><button type="button" class="btn btn-outline-dark" onclick="deleteRow('row10')">Delete</button></td>
+            </tr>
+            <tr class="table-light" id="row11">
+            <th scope="row">11</th>
+            <td>Blame Game (featuring John Legend)</td>
+            <td>4:18</td>
+            <td><button type="button" class="btn btn-outline-dark" onclick="deleteRow('row11')">Delete</button></td>
+            </tr>
+            <tr class="table-primary" id="row12">
+            <th scope="row">12</th>
+            <td>Lost in the World (featuring Bon Iver)</td>
+            <td>4:11</td>
+            <td><button type="button" class="btn btn-outline-dark" onclick="deleteRow('row12')">Delete</button></td>
+            </tr>
+            <tr class="table-success" id="row13">
+            <th scope="row">13</th>
+            <td>Who Will Survive in America</td>
+            <td>3:45</td>
+            <td><button type="button" class="btn btn-outline-dark" onclick="deleteRow('row13')">Delete</button></td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+    
     <!-- EXERCISE 6
         Add an "Add Track" button under the tracklist of the album. 
         It should have a nice shadow transition when it gets hovered (with the box-shadow property) to look like 
         the button was elevating itself every time the user hovers onto it.        
     -->
+
+    <button type="button" class="btn btn-light" onclick="addRow('row14')" id="addButton">Add Track</button>
 
     <!-- EXERCISE 7
         On the click of "Add Track" button, a modal should appear.
@@ -417,13 +433,11 @@ HINT: Manage your time in order to finish the structure and responsiveness befor
         crossorigin="anonymous"></script>
        
   <script>
-  deleteRow();
-      const removeOl = function () {
-        const ol = document.querySelector(
-          ".table mb-5 > div:last-of-type tr"
-        );
-        ol.innerHTML = "";
-      };
-      </script>
+  function deleteRow(id) {
+            let row = document.getElementById(id);
+            row.remove();
+        }
+
+ </script>
   </body>
 </html>
