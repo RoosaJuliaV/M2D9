@@ -365,8 +365,6 @@ HINT: Manage your time in order to finish the structure and responsiveness befor
         the button was elevating itself every time the user hovers onto it.        
     -->
 
-    <button type="button" class="btn btn-light" onclick="addRow('row14')" id="addButton">Add Track</button>
-
     <!-- EXERCISE 7
         On the click of "Add Track" button, a modal should appear.
         (check in the documentation the modal+button example)
@@ -380,6 +378,47 @@ HINT: Manage your time in order to finish the structure and responsiveness befor
 
         The fields should be inside an Input Group and divided in 2 columns.
     -->
+
+    <button id="addButton" type="button" class="btn btn-light" data-toggle="modal" data-target="#exampleModal">
+        Add Track
+      </button>
+      
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Add Track</h5>
+            </div>
+            <div class="modal-body">
+                <div class="modal-body">
+                    <div class="row row-cols-2 form-group">
+                      <div class="col">
+                      <label for="track-number" class="col-form-label">Track Number:</label>
+                      <input type="text" class="form-control" id="track-number"></div>
+                      <div class="col">
+                      <label for="track-title" class="col-form-label">Title:</label>
+                      <input type="text" class="form-control" id="title"></div>
+                      <div class="col">
+                      <label for="track-duration" class="col-form-label">Duration:</label>
+                      <input type="text" class="form-control" id="duration"></div>
+                      <div class="col">
+                      <label for="track-featuring" class="col-form-label">Featuring:</label>
+                      <input type="text" class="form-control" id="featuring"></div>
+                      <div class="col">
+                        <input class="form-check-input mt-3" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label mt-3" for="flexCheckDefault">Live Track:</label>
+                    </div>
+                  </div>
+                  </div>
+                  </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Add</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
     <!-- EXERCISE 8
         The modal should contain 2 buttons at the bottom:
@@ -437,7 +476,6 @@ HINT: Manage your time in order to finish the structure and responsiveness befor
             let row = document.getElementById(id);
             row.remove();
         }
-
  </script>
   </body>
 </html>
